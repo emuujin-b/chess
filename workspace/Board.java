@@ -100,22 +100,22 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
 	//since we only have one kind of piece for now you need only set the same number of pieces on either side.
 	//it's up to you how you wish to arrange your pieces.
     private void initializePieces() {
-    	board[0][0].put(new Piece(true, RESOURCES_BROOK_PNG));
-        board[0][1].put(new Piece(true, RESOURCES_BKNIGHT_PNG));
-        board[0][2].put(new Piece(true, RESOURCES_BBISHOP_PNG));
-        board[0][3].put(new Piece(true, RESOURCES_BQUEEN_PNG));
-        board[0][4].put(new Piece(true, RESOURCES_BKING_PNG));
-        board[0][5].put(new Piece(true, RESOURCES_BBISHOP_PNG));
-        board[0][6].put(new Piece(true, RESOURCES_BKNIGHT_PNG));
-        board[0][7].put(new Piece(true, RESOURCES_BROOK_PNG));
-        board[1][0].put(new Piece(true, RESOURCES_BPAWN_PNG));
-    	board[1][1].put(new Piece(true, RESOURCES_BPAWN_PNG));
-        board[1][2].put(new Piece(true, RESOURCES_BPAWN_PNG));
-        board[1][3].put(new Piece(true, RESOURCES_BPAWN_PNG));
-        board[1][4].put(new Piece(true, RESOURCES_BPAWN_PNG));
-        board[1][5].put(new Piece(true, RESOURCES_BPAWN_PNG));
-        board[1][6].put(new Piece(true, RESOURCES_BPAWN_PNG));
-        board[1][7].put(new Piece(true, RESOURCES_BPAWN_PNG));
+    	board[0][0].put(new Piece(false, RESOURCES_BROOK_PNG));
+        board[0][1].put(new Piece(false, RESOURCES_BKNIGHT_PNG));
+        board[0][2].put(new Piece(false, RESOURCES_BBISHOP_PNG));
+        board[0][3].put(new Piece(false, RESOURCES_BQUEEN_PNG));
+        board[0][4].put(new Piece(false, RESOURCES_BKING_PNG));
+        board[0][5].put(new Piece(false, RESOURCES_BBISHOP_PNG));
+        board[0][6].put(new Piece(false, RESOURCES_BKNIGHT_PNG));
+        board[0][7].put(new Piece(false, RESOURCES_BROOK_PNG));
+        board[1][0].put(new Piece(false, RESOURCES_BPAWN_PNG));
+    	board[1][1].put(new Piece(false, RESOURCES_BPAWN_PNG));
+        board[1][2].put(new Piece(false, RESOURCES_BPAWN_PNG));
+        board[1][3].put(new Piece(false, RESOURCES_BPAWN_PNG));
+        board[1][4].put(new Piece(false, RESOURCES_BPAWN_PNG));
+        board[1][5].put(new Piece(false, RESOURCES_BPAWN_PNG));
+        board[1][6].put(new Piece(false, RESOURCES_BPAWN_PNG));
+        board[1][7].put(new Piece(false, RESOURCES_BPAWN_PNG));
 
         board[7][0].put(new Piece(true, RESOURCES_WROOK_PNG));
         board[7][1].put(new Piece(true, RESOURCES_WKNIGHT_PNG));
