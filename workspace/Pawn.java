@@ -10,38 +10,21 @@ import java.util.List;
 
 import javax.imageio.ImageIO;
 
+//Emuujin Batjargal
+
+//Pawn
+//the pawn moves one square at a time forward only. it can move 2 squares if it is the pawn's first move. 
+//The pawn can caputure when a piece is infront diagonally.
+
+
 //you will need to implement two functions in this file.
-public class Piece {
-    private final boolean color;
-    private BufferedImage img;
-    
-    public Piece(boolean isWhite, String img_file) {
-        this.color = isWhite;
-        
-        try {
-            if (this.img == null) {
-              this.img = ImageIO.read(getClass().getResource(img_file));
-            }
-          } catch (IOException e) {
-            System.out.println("File not found: " + e.getMessage());
-          }
+public class Pawn extends Piece {
+    private boolean color;
+    public Pawn(boolean isWhite, String img_file) {
+    super (isWhite, img_file);
+    color=this.color;
+
     }
-    
-    public boolean getColor() {
-        return color;
-    }
-    
-    public Image getImage() {
-        return img;
-    }
-    
-    public void draw(Graphics g, Square currentSquare) {
-        int x = currentSquare.getX();
-        int y = currentSquare.getY();
-        
-        g.drawImage(this.img, x, y, null);
-    }
-    
     
     // TO BE IMPLEMENTED!
     //return a list of every square that is "controlled" by this piece. A square is controlled
@@ -62,13 +45,13 @@ public class Piece {
         //black pawn
         direction=1;
       }
-      if (row + direction>=0 && row +direction<8 && col - 1>=0) {
+      if (row+direction>=0 && row +direction<8 && col - 1>=0) {
         controlledSquares.add(board[row + direction][col - 1]);
-    }
-    if (row+direction >= 0 && row + direction <8 && col+ 1 <8) {
+      }
+      if (row+direction >= 0 && row + direction <8 && col+ 1 <8) {
         controlledSquares.add(board[row + direction][col + 1]);
-    }
-    return controlledSquares;
+      }
+      return controlledSquares;
     }
     
 
@@ -107,8 +90,8 @@ public class Piece {
           if ((start.getOccupyingPiece().getColor()==true && start.getRow()== 6) || (!start.getOccupyingPiece().getColor()==true && start.getRow()== 1)) { 
             if (!(b.getSquareArray()[start.getRow() + 2 * direction][start.getCol()]).isOccupied()) { 
                 moves.add(b.getSquareArray()[start.getRow() + 2 * direction][start.getCol()]);
-            }
-        }
+            } 
+          }
         }
       }
 //left capture
@@ -126,5 +109,12 @@ public class Piece {
         }
       }
       return moves;
+    }
+    @Override
+    public String toString() {
+      if (color)
+        return "A white pawn";
+      else
+        return "A black pawn";
     }
 }
